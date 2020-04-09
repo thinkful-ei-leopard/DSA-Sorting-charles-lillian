@@ -266,6 +266,25 @@ class _Node {
     return `Cycle in list?: ${cycleTrue}`;
   }
   
+  function cycleTest(list) {
+    let halfNode = list.head;
+    let twiceNode = list.head.next;
+  
+    while(halfNode !== twiceNode && twiceNode !== null && twiceNode.next !== null) {
+      halfNode = halfNode.next;
+      twiceNode = twiceNode.next.next;
+    }
+  
+    if(twiceNode === null || twiceNode.next === null){
+      return 'Doesn;t have a cycle';
+    }
+  
+    if(halfNode === twiceNode){
+      return 'Found a cycle';
+    }
+    
+  }
+
 //   function main() {
 //     let SLL = new LinkedList;
 //     let empty = new LinkedList;
